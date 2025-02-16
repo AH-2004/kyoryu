@@ -1,0 +1,16 @@
+#+title: Winhacks
+
+** Categories
+   - Create an application that helps you study for a test with a reward system
+   - Has a pet that you can reward to increase "happy" meter
+   - The pet in return helps you study via, flashcards and pomodoro timers
+** List of tasks for project
+   - [ ] Basic user interface
+   - [ ] Virtual pet pixel art and simple animations
+   - [ ] List of tests/exams to study for
+   - [ ] List of tasks for studying
+   - [ ] Reward system for completing tasks
+   - [ ] Spending earned rewards on virtual pet
+   - [ ] Virtual pet
+   - [ ] Flashcards
+   - [ ] Pomodoro timer

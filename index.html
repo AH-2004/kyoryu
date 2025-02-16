@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Kyoryu</title>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+
+		<!-- Homepage (Default Visible) -->
+		<div id="homepage">
+			<h1>Kyoryu</h1>
+			<img src="assets/dinowalk.gif" alt="Dinosaur Image">
+			<div class="container">
+				<div class="section" id="nav-pomodoro-home">
+					<img src="assets/clock.svg" alt="Pomodoro Icon">
+					<p>Pomodoro</p>
+				</div>
+				<div class="section" id="nav-flashcards-home">
+					<img src="assets/cards.svg" alt="Flashcards Icon">
+					<p>Flashcards</p>
+				</div>
+				<div class="section" id="nav-something1-home">
+					<img src="assets/shopping-cart.svg" alt="Shop Icon">
+					<p>Shop</p>
+				</div>
+				<div class="section" id="nav-something2-home">
+					<img src="assets/list.svg" alt="To-Do List Icon">
+					<p>To-Do List</p>
+				</div>
+				<div class="section" id="nav-dinosaur-home">
+					<img src="assets/paw-print.svg" alt="Dinosaur Icon">
+					<p>Dinosaur</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Pomodoro Container (Hidden by Default) -->
+		<div id="pomodoro-container" style="display: none;">
+			<div id="timer-box">
+				<nav class="navbar">
+					<img src="assets/clock.svg" alt="Pomodoro Icon" id="nav-pomodoro" class="nav-icon"/>
+					<img src="assets/cards.svg" alt="Flashcards Icon" id="nav-flashcards" class="nav-icon"/>
+					<img src="assets/shopping-cart.svg" alt="Extra Icon 1" id="nav-something1" class="nav-icon"/>
+					<img src="assets/list.svg" alt="Extra Icon 2" id="nav-something2" class="nav-icon"/>
+				</nav>
+				<p id="timer">25:00</p>
+				<div class="btn-group">
+					<button class="btns" id="lock-in-btn">Lock in</button>
+					<button class="btns" id="short-break-btn">Short Break</button>
+					<button class="btns" id="long-break-btn">Long Break</button>
+				</div>
+				<button class="btns" id="start-button">Start</button>
+			</div>
+		</div>
+
+		<!-- Flashcards Container (Hidden by Default) -->
+		<div id="flashcards-container" style="display: none;">
+			<div id="flashcards-box">
+				<nav class="navbar">
+					<img src="assets/clock.svg" alt="Pomodoro Icon" id="nav-pomodoro" class="nav-icon"/>
+					<img src="assets/cards.svg" alt="Flashcards Icon" id="nav-flashcards" class="nav-icon"/>
+					<img src="assets/shopping-cart.svg" alt="Extra Icon 1" id="nav-something1" class="nav-icon"/>
+					<img src="assets/list.svg" alt="Extra Icon 2" id="nav-something2" class="nav-icon"/>
+				</nav>
+				<h1>Flashcards Section</h1>
+				<div id="flashcard-content">
+					<div id="flashcard-placeholder">No flashcards yet. Add a flashcard!</div>
+					<div id="flashcard-display" style="display: none;">
+						<div id="flashcard-front"></div>
+						<div id="flashcard-back" style="display: none;"></div>
+					</div>
+				</div>
+				<div class="flashcard-buttons">
+					<button class="btns" id="add-flashcard-btn">Add Flashcard</button>
+					<button class="btns" id="previous-btn">Previous</button>
+					<button class="btns" id="next-btn">Next</button>
+					<button class="btns" id="show-answer-btn">Show Answer</button>
+					<button class="btns" id="remove-flashcard-btn">Remove Flashcard</button>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Other Containers (Hidden by Default) -->
+		<div id="shop-container" style="display: none;">
+			<nav class="navbar">
+				<img src="assets/clock.svg" alt="Pomodoro Icon" id="nav-pomodoro" class="nav-icon"/>
+				<img src="assets/cards.svg" alt="Flashcards Icon" id="nav-flashcards" class="nav-icon"/>
+				<img src="assets/shopping-cart.svg" alt="Extra Icon 1" id="nav-something1" class="nav-icon"/>
+				<img src="assets/list.svg" alt="Extra Icon 2" id="nav-something2" class="nav-icon"/>
+			</nav>
+			<h1>Shop Section</h1>
+			<p>Shop functionality coming soon!</p>
+		</div>
+
+		<div id="todo-container" style="display: none;">
+			<nav class="navbar">
+				<img src="assets/clock.svg" alt="Pomodoro Icon" id="nav-pomodoro" class="nav-icon"/>
+				<img src="assets/cards.svg" alt="Flashcards Icon" id="nav-flashcards" class="nav-icon"/>
+				<img src="assets/shopping-cart.svg" alt="Extra Icon 1" id="nav-something1" class="nav-icon"/>
+				<img src="assets/list.svg" alt="Extra Icon 2" id="nav-something2" class="nav-icon"/>
+			</nav>
+			<h1>To-Do List Section</h1>
+			<p>To-Do List functionality coming soon!</p>
+		</div>
+
+		<!-- Main JS -->
+		<script src="script.js"></script>
+	</body>
+</html>

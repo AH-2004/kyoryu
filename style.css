@@ -1,0 +1,280 @@
+/* 1. Load Custom Font */
+@font-face {
+    font-family: 'Merchant Copy';
+    src: url('Merchant Copy.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Merchant';
+    src: url('font.ttf');
+}
+
+/* 2. Reset & Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. Body Styles */
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #ee9ca7, #ffdde1);
+    font-family: 'Merchant Copy', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 4. Homepage Styles */
+#homepage {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(150, 50, 70, 0.6);
+    font-size: 70px;
+    font-weight: bold;
+    color: #ff598f;
+    margin-bottom: 20px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.section {
+    width: 160px;
+    height: 160px;
+    border-radius: 0%;
+    border: 3px solid rgba(33, 147, 176, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(33, 147, 176, 0.8);
+    box-shadow: 0 6px 12px rgba(255, 122, 173, 0.4);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.section:hover {
+    background-color: rgba(36, 177, 212, 0.8);
+    border-radius: 10px;
+    transform: scale(1.1);
+    box-shadow: 0 8px 18px rgba(55, 189, 223, 0.8);
+}
+
+.section:active {
+    transform: scale(0.98);
+}
+
+.section img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.section p {
+    font-size: 22px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(150, 50, 70, 0.5);
+    margin-top: 10px;
+}
+
+/* 5. Timer Box Styles */
+#timer-box {
+    background-color: rgba(33, 147, 176, 0.8);
+    padding: 60px;
+    width: 700px;
+    height: 500px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin: 10px;
+}
+
+.nav-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Timer Display */
+#timer {
+    font-size: 5em;
+    margin-bottom: 40px;
+}
+
+/* Button Group Styles */
+.btn-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+/* Base Button Styles */
+.btns {
+    width: 150px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 12px;
+    font-size: 1.7em;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-family: 'Merchant Copy', sans-serif !important;
+}
+
+.btns:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #2193b0;
+    transform: scale(1.02);
+}
+
+/* Start Button */
+#start-button {
+    width: 200px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 12px;
+    font-size: 1.7em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Merchant Copy', sans-serif !important;
+}
+
+#start-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #2193b0;
+    transform: scale(1.05);
+}
+
+/* 6. Flashcards Container Styles */
+#flashcards-box {
+    background-color: rgba(33, 147, 176, 0.8);
+    padding: 60px;
+    width: 700px;
+    /* Changed from fixed height to auto with a minimum height */
+    height: auto;
+    min-height: 600px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Flashcard Content Styles */
+#flashcard-content {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    min-height: 200px;
+    width: 100%; /* Ensure it takes full width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-wrap: break-word; /* Wrap long text */
+    word-wrap: break-word; /* Wrap long text */
+    overflow-y: auto; /* Add scroll if content overflows vertically */
+}
+
+#flashcard-placeholder {
+    color: #888;
+}
+
+#flashcard-display {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%; /* Ensure it takes full width */
+}
+
+#flashcard-front,
+#flashcard-back {
+    text-align: center;
+    width: 100%; /* Ensure it takes full width */
+    overflow-wrap: break-word; /* Wrap long text */
+    word-wrap: break-word; /* Wrap long text */
+}
+
+.flashcard-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%; /* Ensure it takes full width */
+    flex-wrap: wrap; /* Wrap buttons if they overflow */
+}
+
+.flashcard-buttons .btns {
+    width: 120px;
+    height: 60px;
+    font-size: 1em;
+}
+
+/* 7. Other Containers (Shop, To-Do List) */
+#something1-container,
+#something2-container {
+    text-align: center;
+    font-family: 'Merchant Copy', sans-serif;
+    color: #333;
+}

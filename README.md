@@ -1,2 +1,0 @@
-# kyoryu
-winhacks project

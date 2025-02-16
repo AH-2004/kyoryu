@@ -1,573 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<title>Kyoryu</title>
-		<link
-			rel="stylesheet"
-			href="style.css"
-		/>
-	</head>
-	<body>
-		<!-- Homepage (Default Visible) -->
-		<div id="homepage">
-			<h1>Kyoryu</h1>
-			<img
-				src="Images/dinowalk.gif"
-				alt="Dinosaur Image"
-			/>
-			<div class="container">
-				<div
-					class="section"
-					id="nav-pomodoro-home"
-				>
-					<img
-						src="Images/clock.svg"
-						alt="Pomodoro Icon"
-					/>
-					<p>Pomodoro</p>
-				</div>
-				<div
-					class="section"
-					id="nav-flashcards-home"
-				>
-					<img
-						src="Images/cards.svg"
-						alt="Flashcards Icon"
-					/>
-					<p>Flashcards</p>
-				</div>
-				<!-- Shop button remains only on homepage -->
-				<div
-					class="section"
-					id="nav-something1-home"
-				>
-					<img
-						src="Images/shopping-cart.svg"
-						alt="Shop Icon"
-					/>
-					<p>Shop</p>
-				</div>
-				<div
-					class="section"
-					id="nav-something2-home"
-				>
-					<img
-						src="Images/list.svg"
-						alt="To-Do List Icon"
-					/>
-					<p>To-Do List</p>
-				</div>
-				<div
-					class="section"
-					id="nav-dinosaur-home"
-				>
-					<img
-						src="Images/paw-print.svg"
-						alt="Dinosaur Icon"
-					/>
-					<p>Dinosaur</p>
-				</div>
-				<!-- NEW: White Noise Button -->
-				<div
-					class="section"
-					id="nav-whitenoise-home"
-				>
-					<img
-						src="Images/headphones.svg"
-						alt="White Noise Icon"
-					/>
-					<p>White Noise</p>
-				</div>
-			</div>
-		</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kyoryu</title>
+  <!-- Link to your external CSS -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 
-		<!-- Pomodoro Container (Hidden by Default) -->
-		<div
-			id="pomodoro-container"
-			style="display: none"
-		>
-			<div id="timer-box">
-				<nav class="navbar">
-					<!-- Study Tools Only -->
-					<img
-						src="Images/home.svg"
-						alt="Home Icon"
-						id="nav-home"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/clock.svg"
-						alt="Pomodoro Icon"
-						id="nav-pomodoro"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/cards.svg"
-						alt="Flashcards Icon"
-						id="nav-flashcards"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/list.svg"
-						alt="To-Do Icon"
-						id="nav-something2"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/headphones.svg"
-						alt="White Noise Icon"
-						id="nav-whitenoise"
-						class="nav-icon"
-					/>
-				</nav>
-				<h1>Pomodoro</h1>
-				<p id="timer">25:00</p>
-				<div class="btn-group">
-					<button
-						class="btns"
-						id="lock-in-btn"
-					>
-						Lock in
-					</button>
-					<button
-						class="btns"
-						id="short-break-btn"
-					>
-						Short Break
-					</button>
-					<button
-						class="btns"
-						id="long-break-btn"
-					>
-						Long Break
-					</button>
-				</div>
-				<button
-					class="btns"
-					id="start-button"
-				>
-					Start
-				</button>
-			</div>
-		</div>
+  <!-- ======================
+       HOMEPAGE (Default Visible)
+  ======================= -->
+  <div id="homepage">
+    <h1>Kyoryu</h1>
+    <img src="Images/dinowalk.gif" alt="Dinosaur Image">
+    <div class="container">
+      <div class="section" id="nav-pomodoro-home">
+        <img src="Images/clock.svg" alt="Pomodoro Icon">
+        <p>Pomodoro</p>
+      </div>
+      <div class="section" id="nav-flashcards-home">
+        <img src="Images/cards.svg" alt="Flashcards Icon">
+        <p>Flashcards</p>
+      </div>
+      <!-- Shop button remains only on homepage -->
+      <div class="section" id="nav-something1-home">
+        <img src="Images/shopping-cart.svg" alt="Shop Icon">
+        <p>Shop</p>
+      </div>
+      <div class="section" id="nav-something2-home">
+        <img src="Images/list.svg" alt="To-Do List Icon">
+        <p>To-Do List</p>
+      </div>
+      <div class="section" id="nav-dinosaur-home">
+        <img src="Images/paw-print.svg" alt="Dinosaur Icon">
+        <p>Dinosaur</p>
+      </div>
+      <!-- White Noise Button -->
+      <div class="section" id="nav-whitenoise-home">
+        <img src="Images/headphones.svg" alt="White Noise Icon">
+        <p>White Noise</p>
+      </div>
+    </div>
+  </div>
 
-		<!-- Flashcards Container (Hidden by Default) -->
-		<div
-			id="flashcards-container"
-			style="display: none"
-		>
-			<div id="flashcards-box">
-				<nav class="navbar">
-					<!-- Study Tools Only -->
-					<img
-						src="Images/home.svg"
-						alt="Home Icon"
-						id="nav-home"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/clock.svg"
-						alt="Pomodoro Icon"
-						id="nav-pomodoro"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/cards.svg"
-						alt="Flashcards Icon"
-						id="nav-flashcards"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/list.svg"
-						alt="To-Do Icon"
-						id="nav-something2"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/headphones.svg"
-						alt="White Noise Icon"
-						id="nav-whitenoise"
-						class="nav-icon"
-					/>
-				</nav>
-				<h1>Flashcards Section</h1>
-				<div id="flashcard-content">
-					<div id="flashcard-placeholder">
-						No flashcards yet. Add a flashcard!
-					</div>
-					<div
-						id="flashcard-display"
-						style="display: none"
-					>
-						<div id="flashcard-front"></div>
-						<div
-							id="flashcard-back"
-							style="display: none"
-						></div>
-					</div>
-				</div>
-				<div class="flashcard-buttons">
-					<button
-						class="btns"
-						id="add-flashcard-btn"
-					>
-						Add Flashcard
-					</button>
-					<button
-						class="btns"
-						id="previous-btn"
-					>
-						Previous
-					</button>
-					<button
-						class="btns"
-						id="next-btn"
-					>
-						Next
-					</button>
-					<button
-						class="btns"
-						id="show-answer-btn"
-					>
-						Show Answer
-					</button>
-					<button
-						class="btns"
-						id="remove-flashcard-btn"
-					>
-						Remove Flashcard
-					</button>
-				</div>
-			</div>
-		</div>
+  <!-- ======================
+       POMODORO SECTION
+  ======================= -->
+  <div id="pomodoro-container" style="display: none;">
+    <div id="timer-box">
+      <nav class="navbar">
+        <!-- Study Tools Only -->
+        <img src="Images/home.svg" alt="Home Icon" id="nav-home" class="nav-icon"/>
+        <img src="Images/clock.svg" alt="Pomodoro Icon" id="nav-pomodoro" class="nav-icon"/>
+        <img src="Images/cards.svg" alt="Flashcards Icon" id="nav-flashcards" class="nav-icon"/>
+        <img src="Images/list.svg" alt="To-Do Icon" id="nav-something2" class="nav-icon"/>
+        <img src="Images/headphones.svg" alt="White Noise Icon" id="nav-whitenoise" class="nav-icon"/>
+      </nav>
+      <h1>Pomodoro</h1>
+      <p id="timer">25:00</p>
+      <div class="btn-group">
+        <button class="btns" id="lock-in-btn">Lock in</button>
+        <button class="btns" id="short-break-btn">Short Break</button>
+        <button class="btns" id="long-break-btn">Long Break</button>
+      </div>
+      <button class="btns" id="start-button">Start</button>
+    </div>
+  </div>
 
-		<!-- Shop Container (Hidden by Default, no navbar) -->
-		<div
-			id="something1-container"
-			style="display: none"
-		>
-			<div id="todo-content">
-				<nav class="navbar">
-					<!-- Study Tools Only -->
-					<img
-						src="Images/home.svg"
-						alt="Home Icon"
-						id="nav-home"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/clock.svg"
-						alt="Pomodoro Icon"
-						id="nav-pomodoro"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/cards.svg"
-						alt="Flashcards Icon"
-						id="nav-flashcards"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/list.svg"
-						alt="To-Do Icon"
-						id="nav-something2"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/headphones.svg"
-						alt="White Noise Icon"
-						id="nav-whitenoise"
-						class="nav-icon"
-					/>
-				</nav>
-				<h1>Shop Section</h1>
-				<h2 id="currency-status">Currency ${currency}</h2>
-				<!-- Shop Items -->
-				<div
-					class="shop-container"
-					id="shop-container"
-				>
-					<div
-						class="shop-item"
-						id="item-1"
-					>
-						<img
-							src="Images/ambrosia.png"
-							alt="Ambrosia"
-						/>
-						<p id="name">Ambrosia</p>
-						<span>
-							<p id="value">100</p>
-							$
-						</span>
-					</div>
-					<div
-						class="shop-item"
-						id="item-2"
-					>
-						<img
-							src="Images/carrot.png"
-							alt="Carrot"
-						/>
-						<p id="name">Carrot</p>
-						<span>
-							$
-							<p id="value">30</p>
-						</span>
-					</div>
-					<div
-						class="shop-item"
-						id="item-3"
-					>
-						<img
-							src="Images/chicken.png"
-							alt="Chicken"
-						/>
-						<p id="name">Chicken</p>
-						<span>
-							$
-							<p id="value">30</p>
-						</span>
-					</div>
-					<div
-						class="shop-item single"
-						id="item-4"
-					>
-						<img
-							src="Images/necklace.png"
-							alt="Necklace"
-						/>
-						<p id="name">Necklace</p>
-						<span>
-							$
-							<p id="value">50</p>
-						</span>
-					</div>
-					<div
-						class="shop-item single"
-						id="item-5"
-					>
-						<img
-							src="Images/strawhat.png"
-							alt="Strawhat"
-						/>
-						<p id="name">Strawhat</p>
-						<span>
-							$
-							<p id="value">50</p>
-						</span>
-					</div>
-				</div>
-			</div>
-		</div>
+  <!-- ======================
+       FLASHCARDS SECTION
+  ======================= -->
+  <div id="flashcards-container" style="display: none;">
+    <div id="flashcards-box">
+      <nav class="navbar">
+        <img src="Images/home.svg" alt="Home Icon" id="nav-home" class="nav-icon"/>
+        <img src="Images/clock.svg" alt="Pomodoro Icon" id="nav-pomodoro" class="nav-icon"/>
+        <img src="Images/cards.svg" alt="Flashcards Icon" id="nav-flashcards" class="nav-icon"/>
+        <img src="Images/list.svg" alt="To-Do Icon" id="nav-something2" class="nav-icon"/>
+        <img src="Images/headphones.svg" alt="White Noise Icon" id="nav-whitenoise" class="nav-icon"/>
+      </nav>
+      <h1>Flashcards Section</h1>
+      <div id="flashcard-content">
+        <div id="flashcard-placeholder">No flashcards yet. Add a flashcard!</div>
+        <div id="flashcard-display" style="display: none;">
+          <div id="flashcard-front"></div>
+          <div id="flashcard-back" style="display: none;"></div>
+        </div>
+      </div>
+      <div class="flashcard-buttons">
+        <button class="btns" id="add-flashcard-btn">Add Flashcard</button>
+        <button class="btns" id="previous-btn">Previous</button>
+        <button class="btns" id="next-btn">Next</button>
+        <button class="btns" id="show-answer-btn">Show Answer</button>
+        <button class="btns" id="remove-flashcard-btn">Remove Flashcard</button>
+      </div>
+    </div>
+  </div>
 
-		<!-- To-Do List Container (Hidden by Default) -->
-		<div
-			id="something2-container"
-			style="display: none"
-		>
-			<div id="todo-content">
-				<nav class="navbar">
-					<!-- Study Tools Only -->
-					<img
-						src="Images/home.svg"
-						alt="Home Icon"
-						id="nav-home"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/clock.svg"
-						alt="Pomodoro Icon"
-						id="nav-pomodoro"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/cards.svg"
-						alt="Flashcards Icon"
-						id="nav-flashcards"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/list.svg"
-						alt="To-Do Icon"
-						id="nav-something2"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/headphones.svg"
-						alt="White Noise Icon"
-						id="nav-whitenoise"
-						class="nav-icon"
-					/>
-				</nav>
-				<h1>To-Do List Section</h1>
-				<!-- White box containing tasks -->
-				<div id="todo-box">
-					<div id="todo-placeholder">No task yet, add task now!</div>
-					<ul id="todo-list"></ul>
-				</div>
-				<!-- Plus button centered below the white box -->
-				<button
-					id="add-task-btn"
-					class="btns todo-add-btn"
-				>
-					+
-				</button>
-			</div>
-		</div>
+  <!-- ======================
+       SHOP SECTION
+  ======================= -->
+  <div id="something1-container" style="display: none;">
+    <h1>Shop Section</h1>
+    <p id="currency-display">Currency: $0</p>
+    <div class="shop-container">
+      <div class="shop-item" data-name="Ambrosia" data-price="100">
+        <img src="Images/ambrosia.png" alt="Ambrosia">
+        <p>Ambrosia</p>
+        <span>$100</span>
+      </div>
+      <div class="shop-item" data-name="Carrot" data-price="10">
+        <img src="Images/carrot.png" alt="Carrot">
+        <p>Carrot</p>
+        <span>$10</span>
+      </div>
+      <div class="shop-item" data-name="Chicken" data-price="20">
+        <img src="Images/chicken.png" alt="Chicken">
+        <p>Chicken</p>
+        <span>$20</span>
+      </div>
+      <div class="shop-item" data-name="Necklace" data-price="50">
+        <img src="Images/necklace.png" alt="Necklace">
+        <p>Necklace</p>
+        <span>$50</span>
+      </div>
+      <div class="shop-item" data-name="Strawhat" data-price="70">
+        <img src="Images/strawhat.png" alt="Strawhat">
+        <p>Strawhat</p>
+        <span>$70</span>
+      </div>
+    </div>
+    <button class="btns" id="back-home-shop">Back to Home</button>
+  </div>
 
-		<!-- White Noise Container (Hidden by Default) -->
-		<div
-			id="whitenoise-container"
-			style="display: none"
-		>
-			<div id="whitenoise-box">
-				<nav class="navbar">
-					<!-- Study Tools Only -->
-					<img
-						src="Images/home.svg"
-						alt="Home Icon"
-						id="nav-home"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/clock.svg"
-						alt="Pomodoro Icon"
-						id="nav-pomodoro"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/cards.svg"
-						alt="Flashcards Icon"
-						id="nav-flashcards"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/list.svg"
-						alt="To-Do Icon"
-						id="nav-something2"
-						class="nav-icon"
-					/>
-					<img
-						src="Images/headphones.svg"
-						alt="White Noise Icon"
-						id="nav-whitenoise"
-						class="nav-icon"
-					/>
-				</nav>
-				<h1>White Noise</h1>
-				<!-- 3x3 Grid of Noise Buttons -->
-				<div class="noise-grid">
-					<button
-						class="noise-button"
-						data-file="Mp3Files/03-White-Noise-10min.mp3"
-					>
-						<img
-							src="Images/speaker.svg"
-							alt="Speaker Icon"
-						/>
-						<p>White</p>
-					</button>
-					<button
-						class="noise-button"
-						data-file="Mp3Files/10-Water-10min.mp3"
-					>
-						<img
-							src="Images/speaker.svg"
-							alt="Speaker Icon"
-						/>
-						<p>Water</p>
-					</button>
-					<button
-						class="noise-button"
-						data-file="Mp3Files/20-Fan-10min.mp3"
-					>
-						<img
-							src="Images/speaker.svg"
-							alt="Speaker Icon"
-						/>
-						<p>Fan</p>
-					</button>
-					<button
-						class="noise-button"
-						data-file="Mp3Files/22-Heater-10min.mp3"
-					>
-						<img
-							src="Images/speaker.svg"
-							alt="Speaker Icon"
-						/>
-						<p>Heater</p>
-					</button>
-					<button
-						class="noise-button"
-						data-file="Mp3Files/25-Ocean-10min.mp3"
-					>
-						<img
-							src="Images/speaker.svg"
-							alt="Speaker Icon"
-						/>
-						<p>Ocean</p>
-					</button>
-					<button
-						class="noise-button"
-						data-file="Mp3Files/38-Underwater-10min.mp3"
-					>
-						<img
-							src="Images/speaker.svg"
-							alt="Speaker Icon"
-						/>
-						<p>Underwater</p>
-					</button>
-					<button
-						class="noise-button"
-						data-file="Mp3Files/42-Rain-10min.mp3"
-					>
-						<img
-							src="Images/speaker.svg"
-							alt="Speaker Icon"
-						/>
-						<p>Rain</p>
-					</button>
-					<button
-						class="noise-button"
-						data-file="Mp3Files/51-Train-10min.mp3"
-					>
-						<img
-							src="Images/speaker.svg"
-							alt="Speaker Icon"
-						/>
-						<p>Train</p>
-					</button>
-					<button
-						class="noise-button"
-						data-file="Mp3Files/16-Dryer-10min.mp3"
-					>
-						<img
-							src="Images/speaker.svg"
-							alt="Speaker Icon"
-						/>
-						<p>Dryer</p>
-					</button>
-				</div>
-				<!-- STOP button to stop audio -->
-				<button
-					id="stop-noise-btn"
-					class="noise-stop-button"
-				>
-					<img
-						src="Images/stop.svg"
-						alt="Stop Icon"
-					/>
-				</button>
-			</div>
-		</div>
+  <!-- ======================
+       TO-DO LIST SECTION
+  ======================= -->
+  <div id="something2-container" style="display: none;">
+    <div id="todo-content">
+      <nav class="navbar">
+        <img src="Images/home.svg" alt="Home Icon" id="nav-home" class="nav-icon"/>
+        <img src="Images/clock.svg" alt="Pomodoro Icon" id="nav-pomodoro" class="nav-icon"/>
+        <img src="Images/cards.svg" alt="Flashcards Icon" id="nav-flashcards" class="nav-icon"/>
+        <img src="Images/list.svg" alt="To-Do Icon" id="nav-something2" class="nav-icon"/>
+        <img src="Images/headphones.svg" alt="White Noise Icon" id="nav-whitenoise" class="nav-icon"/>
+      </nav>
+      <h1>To-Do List Section</h1>
+      <div id="todo-box">
+        <div id="todo-placeholder">No task yet, add task now!</div>
+        <ul id="todo-list"></ul>
+      </div>
+      <button id="add-task-btn" class="btns todo-add-btn">+</button>
+    </div>
+  </div>
 
-		<!-- Main JS -->
-		<script src="script.js"></script>
-	</body>
+  <!-- ======================
+       WHITE NOISE SECTION
+  ======================= -->
+  <div id="whitenoise-container" style="display: none;">
+    <div id="whitenoise-box">
+      <nav class="navbar">
+        <img src="Images/home.svg" alt="Home Icon" id="nav-home" class="nav-icon"/>
+        <img src="Images/clock.svg" alt="Pomodoro Icon" id="nav-pomodoro" class="nav-icon"/>
+        <img src="Images/cards.svg" alt="Flashcards Icon" id="nav-flashcards" class="nav-icon"/>
+        <img src="Images/list.svg" alt="To-Do Icon" id="nav-something2" class="nav-icon"/>
+        <img src="Images/headphones.svg" alt="White Noise Icon" id="nav-whitenoise" class="nav-icon"/>
+      </nav>
+      <h1>White Noise</h1>
+      <div class="noise-grid">
+        <button class="noise-button" data-file="Mp3Files/03-White-Noise-10min.mp3">
+          <img src="Images/speaker.svg" alt="Speaker Icon">
+          <p>White</p>
+        </button>
+        <button class="noise-button" data-file="Mp3Files/10-Water-10min.mp3">
+          <img src="Images/speaker.svg" alt="Speaker Icon">
+          <p>Water</p>
+        </button>
+        <button class="noise-button" data-file="Mp3Files/16-Dryer-10min.mp3">
+          <img src="Images/speaker.svg" alt="Speaker Icon">
+          <p>Dryer</p>
+        </button>
+        <button class="noise-button" data-file="Mp3Files/20-Fan-10min.mp3">
+          <img src="Images/speaker.svg" alt="Speaker Icon">
+          <p>Fan</p>
+        </button>
+        <button class="noise-button" data-file="Mp3Files/22-Heater-10min.mp3">
+          <img src="Images/speaker.svg" alt="Speaker Icon">
+          <p>Heater</p>
+        </button>
+        <button class="noise-button" data-file="Mp3Files/25-Ocean-10min.mp3">
+          <img src="Images/speaker.svg" alt="Speaker Icon">
+          <p>Ocean</p>
+        </button>
+        <button class="noise-button" data-file="Mp3Files/38-Underwater-10min.mp3">
+          <img src="Images/speaker.svg" alt="Speaker Icon">
+          <p>Underwater</p>
+        </button>
+        <button class="noise-button" data-file="Mp3Files/42-Rain-10min.mp3">
+          <img src="Images/speaker.svg" alt="Speaker Icon">
+          <p>Rain</p>
+        </button>
+        <button class="noise-button" data-file="Mp3Files/51-Train-10min.mp3">
+          <img src="Images/speaker.svg" alt="Speaker Icon">
+          <p>Train</p>
+        </button>
+      </div>
+      <button id="stop-noise-btn" class="noise-stop-button">
+        <img src="Images/stop.svg" alt="Stop Icon">
+      </button>
+    </div>
+  </div>
+
+  <!-- ======================
+       DINO SECTION
+  ======================= -->
+  <div id="dinosaur-container" style="display: none;">
+    <nav class="navbar">
+      <img src="Images/home.svg" alt="Home Icon" id="nav-home" class="nav-icon"/>
+      <img src="Images/clock.svg" alt="Pomodoro Icon" id="nav-pomodoro" class="nav-icon"/>
+      <img src="Images/cards.svg" alt="Flashcards Icon" id="nav-flashcards" class="nav-icon"/>
+      <img src="Images/list.svg" alt="To-Do Icon" id="nav-something2" class="nav-icon"/>
+      <img src="Images/headphones.svg" alt="White Noise Icon" id="nav-whitenoise" class="nav-icon"/>
+    </nav>
+    <h1>Dinosaur Section</h1>
+    <div id="dino-box">
+      <img id="dino-gif" src="Gifs/Idle_.gif" alt="Dino GIF" />
+      <div id="happiness-meter">
+        <div id="happiness-fill"></div>
+      </div>
+    </div>
+    <div id="dino-actions">
+      <button class="dino-btn" id="feed-carrot-btn">Feed Carrot</button>
+      <button class="dino-btn" id="feed-chicken-btn">Feed Chicken</button>
+      <button class="dino-btn" id="feed-ambrosia-btn">Feed Ambrosia</button>
+      <button class="dino-btn" id="pet-dino-btn">Pet Dino</button>
+    </div>
+  </div>
+
+  <!-- Link to your external JS -->
+  <script src="script.js"></script>
+</body>
 </html>

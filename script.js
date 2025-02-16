@@ -1,6 +1,8 @@
 /****************************
  * USER DATA & LOCAL STORAGE
  ****************************/
+// localStorage.removeItem("userData"); // (Optional) Force reset each time
+
 let userData = JSON.parse(localStorage.getItem("userData")) || {
     currency: 0,
     purchasedAccessories: {
@@ -13,7 +15,11 @@ let userData = JSON.parse(localStorage.getItem("userData")) || {
       chicken: 0
     },
     // Default the dino's happiness if not present
-    happiness: 50 
+    happiness: 50,
+    // Keep track of last time happiness was updated
+    lastHappinessUpdate: Date.now(),
+    // Add a lastPetTime for the pet cooldown
+    lastPetTime: 0
   };
   
   function saveUserData() {
@@ -326,8 +332,8 @@ let userData = JSON.parse(localStorage.getItem("userData")) || {
       checkBtn.className = "todo-btn";
       checkBtn.innerHTML = "&#10003;";
       checkBtn.addEventListener("click", () => {
-        if (!tasks[index].completed) {
-          tasks[index].completed = true;
+        if (!task.completed) {
+          task.completed = true;
           userData.currency += 10;
           updateCurrencyDisplay();
         }
@@ -388,12 +394,31 @@ let userData = JSON.parse(localStorage.getItem("userData")) || {
   /****************************
    * DINO SECTION LOGIC
    ****************************/
+  // Decay happiness
+  function decayHappiness() {
+    const now = Date.now();
+    const elapsed = now - userData.lastHappinessUpdate; // ms
+    // 1 hour = 3600000 ms
+    if (elapsed >= 3600000) {
+      userData.happiness = 0;
+    } else {
+      const fraction = elapsed / 3600000; 
+      const decAmount = 100 * fraction;
+      userData.happiness = Math.max(0, userData.happiness - decAmount);
+    }
+    userData.lastHappinessUpdate = now;
+    saveUserData();
+  }
+  
   function initDinoSection() {
     updateDinoState();
   }
   
   // Re-check happiness and accessories, pick correct GIF
   function updateDinoState() {
+    // Decay happiness before determining state
+    decayHappiness();
+  
     // Clamp happiness 0..100
     userData.happiness = Math.max(0, Math.min(100, userData.happiness));
   
@@ -407,7 +432,7 @@ let userData = JSON.parse(localStorage.getItem("userData")) || {
       range = "happy";
     } else if (userData.happiness > 33) {
       range = "idle";
-    } // else remain "sad"
+    }
   
     // Check accessories
     const hasNecklace = userData.purchasedAccessories.necklace;
@@ -456,6 +481,7 @@ let userData = JSON.parse(localStorage.getItem("userData")) || {
   
   // Feed Carrot (+10%)
   function feedCarrot() {
+    decayHappiness();
     if (userData.purchasedFood.carrot > 0) {
       userData.purchasedFood.carrot--;
       userData.happiness += 10;
@@ -468,6 +494,7 @@ let userData = JSON.parse(localStorage.getItem("userData")) || {
   
   // Feed Chicken (+20%)
   function feedChicken() {
+    decayHappiness();
     if (userData.purchasedFood.chicken > 0) {
       userData.purchasedFood.chicken--;
       userData.happiness += 20;
@@ -480,6 +507,7 @@ let userData = JSON.parse(localStorage.getItem("userData")) || {
   
   // Feed Ambrosia (+50%)
   function feedAmbrosia() {
+    decayHappiness();
     if (userData.purchasedFood.ambrosia > 0) {
       userData.purchasedFood.ambrosia--;
       userData.happiness += 50;
@@ -490,8 +518,21 @@ let userData = JSON.parse(localStorage.getItem("userData")) || {
     updateDinoState();
   }
   
-  // Pet Dino (+5%)
+  // Pet Dino (+5%); once every 20 minutes
   function petDino() {
+    decayHappiness();
+  
+    const now = Date.now();
+    const elapsedSinceLastPet = now - (userData.lastPetTime || 0);
+    // 20 minutes => 1200000 ms
+    if (elapsedSinceLastPet < 1200000) {
+      const minutesLeft = Math.ceil((1200000 - elapsedSinceLastPet) / 60000);
+      alert(`You can only pet the dino once every 20 minutes. Try again in ~${minutesLeft} minute(s).`);
+      return;
+    }
+  
+    // if enough time has passed, pet the dino
+    userData.lastPetTime = now;
     userData.happiness += 5;
     alert("You petted the dino! (+5% happiness)");
     updateDinoState();
